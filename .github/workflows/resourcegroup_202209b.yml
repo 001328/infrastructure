@@ -1,0 +1,23 @@
+name: Resource Group Deployment 202209b
+on: workflow_dispatch
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v2
+
+   - name: Login to Azure
+     uses: azure/login@v1.1
+     with:
+       creds: ${{ secrets.AZURELOGINCREDS }}
+
+   - name: Create Resource Group
+     uses: azure/arm-deploy@v1
+     with:
+       scope: subscription
+       subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
+       region: ${{ secrets.REGION }}
+       template: ./templates_custom/resourcegroup_202209b.json
+       parameters:
+         ResourceGroupName=${{ secrets.RESOURCEGROUPNAME }}
+         Location=${{ secrets.REGION }}
