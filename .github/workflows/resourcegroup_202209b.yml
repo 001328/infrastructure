@@ -16,7 +16,7 @@ jobs:
      with:
        scope: subscription
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
-       region: ${{ secrets.REGION }}
+       region: eastus2
        template: ./templates_custom/resourcegroup_202209b.json
        parameters:
          ResourceGroupName=${{ secrets.RESOURCEGROUPNAME }}
