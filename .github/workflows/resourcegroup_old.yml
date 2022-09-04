@@ -1,4 +1,4 @@
-name: Resource Group Deployment 202209b
+name: del - Resource Group Deployment
 on: workflow_dispatch
 jobs:
  build:
@@ -16,8 +16,7 @@ jobs:
      with:
        scope: subscription
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
-       region: eastus2
-       template: ./templates_custom/resourcegroup_202209b.json
+       region: ${{ secrets.REGION }}
+       template: ./templates_custom/resourcegroup_202209a.json
        parameters:
          ResourceGroupName=${{ secrets.RESOURCEGROUPNAME }}
-         Location=${{ secrets.REGION }}
