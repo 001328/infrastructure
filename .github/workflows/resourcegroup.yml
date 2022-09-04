@@ -20,4 +20,4 @@ jobs:
        template: ./templates_custom/resourcegroup_202209b.json
        parameters:
          ResourceGroupName=${{ secrets.RESOURCEGROUPNAME }}
-         Location=${{ secrets.REGION }}
+         Location=${{ secrets.LOCATION }}
