@@ -11,7 +11,7 @@
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "[providers('Microsoft.Resources','resourceGroups').apiVersions[0]]",
             "name": "[parameters('ResourceGroupName')]",
-            "location": "[parameters('Location')]"
+            "location": "eastus"
         }
     ]
 }
