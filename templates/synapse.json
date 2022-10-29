@@ -1,7 +1,7 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": { "Synapse_SQLAdministratorName": { "type": "string" }, "Synapse_SQLAdministratorPassword": { "type": "secureString" } },
+    "parameters": { "SynapseSQL_AdministratorName": { "type": "string" }, "SynapseSQL_AdministratorPassword": { "type": "secureString" } },
     "resources": [
         {
             "type": "Microsoft.Synapse/workspaces",
@@ -23,8 +23,8 @@
                     "sql": "[concat(resourceGroup().name,'syn','.sql.azuresynapse.net')]"
                 },
                 "managedResourceGroupName": "[concat(resourceGroup().name,'mrg-syn')]",
-                "sqlAdministratorLogin": "[parameters('Synapse_SQLAdministratorName')]",
-                "sqlAdministratorLoginPassword": "[parameters('Synapse_SQLAdministratorPassword')]",
+                "sqlAdministratorLogin": "[parameters('SynapseSQL_AdministratorName')]",
+                "sqlAdministratorLoginPassword": "[parameters('SynapseSQL_AdministratorPassword')]",
                 "publicNetworkAccess": "Enabled"
             }
         }
