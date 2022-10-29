@@ -1,7 +1,7 @@
 {
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
-    "parameters": { "SynapseSQL_AdministratorName": { "type": "string" }, "SynapseSQL_AdministratorPassword": { "type": "secureString" } },
+    "parameters": { "Synapse_SQLAdministratorName": { "type": "string" }, "Synapse_SQLAdministratorPassword": { "type": "secureString" } },
     "resources": [
         {
             "type": "Microsoft.Synapse/workspaces",
@@ -17,7 +17,7 @@
                     "filesystem": "concat(resourceGroup().name,'dlfs')"
                 },
                 "connectivityEndpoints": {
-                    "web": "[concat('https://web.azuresynapse.net?workspace=%2fsubscriptions%2f',subscription().Id,'%2fresourceGroups%2f',resourceGroup().name,'%2fproviders%2fMicrosoft.Synapse%2fworkspaces%2f',resourceGroup().name,'s')]",
+                    "web": "[concat('https://web.azuresynapse.net?workspace=%2fsubscriptions%2f',subscription().Id,'%2fresourceGroups%2f',resourceGroup().name,'%2fproviders%2fMicrosoft.Synapse%2fworkspaces%2f',resourceGroup().name,'syn')]",
                     "dev": "[concat('https://',resourceGroup().name,'syn','.dev.azuresynapse.net')]",
                     "sqlOnDemand": "[concat(resourceGroup().name,'syn','-ondemand.sql.azuresynapse.net')]",
                     "sql": "[concat(resourceGroup().name,'syn','.sql.azuresynapse.net')]"
