@@ -1,0 +1,36 @@
+name: Resource Group Deployment
+on: workflow_dispatch
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v2
+
+   - name: Login to Azure
+     uses: azure/login@v1.1
+     with:
+       creds: ${{ secrets.AZURELOGINCREDS }}
+
+   - name: Create Data Lake (pre-requisite for Synapse)
+     uses: azure/arm-deploy@v1
+     with:
+       subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
+       resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
+       template: ./templates/datalake.json
+
+   - name: Create Data Lake File System (pre-requisite for Synapse)
+     uses: azure/arm-deploy@v1
+     with:
+       subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
+       resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
+       template: ./templates/datalakefilesystem.json
+
+   - name: Create Synapse Analytics Workspace
+     uses: azure/arm-deploy@v1
+     with:
+       subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
+       resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
+       template: ./templates/synapse.json
+       parameters:
+         SynapseSQL_AdministratorName=${{ secrets.SYNAPSE_SQLADMINISTRATORNAME }}
+         SynapseSQL_AdministratorPassword=${{ secrets.SYNAPSE_SQLADMINISTRATORPASSWORD }}
