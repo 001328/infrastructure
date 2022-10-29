@@ -9,7 +9,7 @@
         {
             "type": "Microsoft.Resources/resourceGroups",
             "apiVersion": "[providers('Microsoft.Resources','resourceGroups').apiVersions[0]]",
-            "name": "[concat(parameters('ResourceGroupName'),'monster-rg')]",
+            "name": "[concat(parameters('ResourceGroupName'),'rg')]",
             "location": "eastus2"
         }
     ]
