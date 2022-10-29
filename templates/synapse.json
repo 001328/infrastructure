@@ -14,7 +14,7 @@
                     "resourceId": "[resourceId('Microsoft.Storage/storageAccounts',concat(resourceGroup().name,'dl'))]",
                     "createManagedPrivateEndpoint": false,
                     "accountUrl": "[concat('https://',resourceGroup().name,'dl.dfs.core.windows.net')]",
-                    "filesystem": "concat(resourceGroup().name,'dlfs')"
+                    "filesystem": "[concat(resourceGroup().name,'dlfs')]"
                 },
                 "connectivityEndpoints": {
                     "web": "[concat('https://web.azuresynapse.net?workspace=%2fsubscriptions%2f',subscription().Id,'%2fresourceGroups%2f',resourceGroup().name,'%2fproviders%2fMicrosoft.Synapse%2fworkspaces%2f',resourceGroup().name,'syn')]",
