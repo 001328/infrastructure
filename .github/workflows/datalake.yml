@@ -1,0 +1,21 @@
+name: Data Lake Deployment
+on: workflow_dispatch
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v2
+
+   - name: Login to Azure
+     uses: azure/login@v1.1
+     with:
+       creds: ${{ secrets.AZURELOGINCREDS }}
+
+   - name: Create Data Lake
+     uses: azure/arm-deploy@v1
+     with:
+       subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
+       resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
+       template: ./templates/datalake.json
+
+
