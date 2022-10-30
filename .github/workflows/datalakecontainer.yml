@@ -11,9 +11,11 @@ jobs:
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
 
-   - name: Create Data Lake File System
+   - name: Create Data Lake
      uses: azure/arm-deploy@v1
      with:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
-       template: ./templates/datalakefilesystem.json
+       template: ./templates/datalake.json
+
+
