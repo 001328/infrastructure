@@ -1,4 +1,4 @@
-name: Synapse Deployment
+name: 2 Synapse Deployment
 on: workflow_dispatch
 jobs:
  build:
@@ -23,7 +23,7 @@ jobs:
      with:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
-       template: ./templates/datalakefilesystem.json
+       template: ./templates/datalakecontainer.json
 
    - name: Create Synapse Analytics Workspace
      uses: azure/arm-deploy@v1

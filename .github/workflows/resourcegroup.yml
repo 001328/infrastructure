@@ -1,4 +1,4 @@
-name: Resource Group Deployment
+name: 1 Resource Group Deployment
 on: workflow_dispatch
 jobs:
  build:
