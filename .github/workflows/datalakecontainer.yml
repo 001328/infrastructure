@@ -16,6 +16,6 @@ jobs:
      with:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
-       template: ./templates/datalake.json
+       template: ./templates/datalakefilesystem.json
 
 
