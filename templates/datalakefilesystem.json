@@ -5,7 +5,7 @@
         {
             "type": "blobServices/containers",
             "apiVersion": "[providers('Microsoft.Storage','storageAccounts').apiVersions[0]]",
-            "name": "[resourceId('Microsoft.Storage/storageAccounts/',concat(resourceGroup().name,'dl/',resourceGroup().name,'dlfs')]",
+            "name": "[concat('Microsoft.Storage/storageAccounts/',resourceGroup().name,'dl/',resourceGroup().name,'dlfs')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts/',concat(resourceGroup().name,'dl'))]"
             ]
