@@ -7,7 +7,7 @@
             "apiVersion": "[providers('Microsoft.Storage','storageAccounts').apiVersions[0]]",
             "name": "[concat(resourceGroup().name,'dlfs')]",
             "dependsOn": [
-                "[resourceId('Microsoft.Storage/storageAccounts/',concat(resourceGroup().name,'dl'))]"
+                "[concat('Microsoft.Storage/storageAccounts/',resourceGroup().name,'dl')]"
             ]
         }
     ]
