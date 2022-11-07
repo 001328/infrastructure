@@ -1,4 +1,4 @@
-name: 99 Data Lake File System Deployment
+name: 99 Data Lake Deployment
 on: workflow_dispatch
 jobs:
  build:
