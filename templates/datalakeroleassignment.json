@@ -1,0 +1,20 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "variables": {
+        "RoleDefinitionId_Owner": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
+        , "RoleDefinitionId_Contributor": "b24988ac-6180-42a0-ab88-20f7382dd24c"
+        , "ObjectId_GroupOrUser": "82f15ac5-8c5f-4e45-987f-fa1686da3a36"
+    },
+    "resources": [
+        {
+            "type": "Microsoft.Authorization/roleAssignments",
+            "apiVersion": "[providers('Microsoft.Authorization','roleAssignments').apiVersions[0]]",
+            "name": "[guid(concat(variables('ObjectId_GroupOrUser'),'-',variables('RoleDefinitionId_Contributor')))]",
+            "properties": {
+                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('RoleDefinitionId_Contributor'))]",
+                "principalId": "[variables('ObjectId_GroupOrUser')]"
+            }
+        }
+    ]
+}

@@ -1,20 +1,19 @@
-name: Azure Data Solution Role Assignment to Test
+name: 99 DL Role Assignment
 on: workflow_dispatch
 jobs:
  build:
-  runs-on: self-hosted
+  runs-on: ubuntu-latest
   steps:
    - uses: actions/checkout@v2
-   - uses: elstudio/action-install-azure-cli@main
 
    - name: Login to Azure
      uses: azure/login@v1.1
      with:
-       creds: ${{ secrets.AZURELOGINCREDS_TEST }}
+       creds: ${{ secrets.AZURELOGINCREDS }}
  
    - name: Create Role Assignment
      uses: azure/arm-deploy@v1
      with:
-       subscriptionId: ${{ secrets.SUBSCRIPTIONID_TEST }}
-       resourceGroupName: ${{ secrets.RESOURCEGROUPNAME_TEST }}
-       template: ./templates_custom/roleassignment_pkoneru20220328.json
+       subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
+       resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
+       template: ./templates_custom/datalakeroleassignment.json
