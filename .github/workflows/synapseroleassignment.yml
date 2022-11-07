@@ -1,4 +1,4 @@
-name: 99 Data Lake File System Deployment
+name: Synapse Role Assignment
 on: workflow_dispatch
 jobs:
  build:
@@ -10,10 +10,10 @@ jobs:
      uses: azure/login@v1.1
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
-
-   - name: Create Data Lake File System
+ 
+   - name: Create Role Assignment
      uses: azure/arm-deploy@v1
      with:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
-       template: ./templates/datalake.json
+       template: ./templates/synapseroleassignment.json
