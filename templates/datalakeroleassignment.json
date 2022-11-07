@@ -4,7 +4,7 @@
     "variables": {
         "RoleDefinitionId_Owner": "8e3af657-a8ff-443c-a75c-2fe8c4bcb635"
         , "RoleDefinitionId_Contributor": "b24988ac-6180-42a0-ab88-20f7382dd24c"
-        , "ObjectId_GroupOrUser": "82f15ac5-8c5f-4e45-987f-fa1686da3a36"
+        , "ObjectId_GroupOrUser": "24f06d41-b39b-4aa9-97bb-076201bd8ba9"
     },
     "resources": [
         {
