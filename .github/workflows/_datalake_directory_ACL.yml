@@ -1,5 +1,6 @@
 name: 66 Data Lake Directory ACL
 on: workflow_dispatch
+
 jobs:
  build:
   runs-on: ubuntu-latest
@@ -7,24 +8,14 @@ jobs:
    - uses: actions/checkout@v2
 
    - name: Login to Azure
-     uses: azure/login@v1.1
+     uses: azure/login@v1
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
+       enable-AzPSSession: true
 
 
    - name: Update Directory
-     shell: pwsh
-     run: |
-       Install-Module Az.Storage -Repository PSGallery -Force
-       Connect-AzAccount -ServicePrincipal
-       Select-AzSubscription -SubscriptionId b14a1c2f-88c5-4229-be66-d9262651dd73
-       $ctx = New-AzStorageContext -StorageAccountName '809rgdl' -UseConnectedAccount
-       $filesystemName = "809rgdlfs"
-       $dirname = "blubb/"
-       $userID = "24f06d41-b39b-4aa9-97bb-076201bd8ba9";
-       $permission = "rw-";
-       $acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission $permission
-       Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
-
-
-       
+     uses: Azure/powershell@v1
+     with:
+        inlineScript: Get-AzResourceGroup -Name "809rg"
+        azPSVersion: "latest"
