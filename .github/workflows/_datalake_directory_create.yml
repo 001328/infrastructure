@@ -1,4 +1,4 @@
-name: 66 Data Lake Directory ACL
+name: 65 Data Lake Directory Create
 on: workflow_dispatch
 #on: [push]
 
@@ -15,8 +15,8 @@ jobs:
        enable-AzPSSession: true
 
 
-   - name: Update ACL for Directory
+   - name: Create Directory
      uses: Azure/powershell@v1
      with:
-        inlineScript: ./scripts/DL_setACLpermissions.ps1
+        inlineScript: ./scripts/DL_createDirectory.ps1
         azPSVersion: "latest"
