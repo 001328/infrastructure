@@ -11,14 +11,16 @@ jobs:
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
 
-   - name: Install Module
+   - name: Install Module & Connect
      shell: pwsh
      run: |
        Install-Module Az.Storage -Repository PSGallery -Force
+       Connect-AzAccount
 
    - name: Update Directory
      shell: pwsh
      run: |
+       Select-AzSubscription -SubscriptionId b14a1c2f-88c5-4229-be66-d9262651dd73
        $ctx = New-AzStorageContext -StorageAccountName '809rgdl' -UseConnectedAccount
        $filesystemName = "809rgdlfs"
        $dirname = "blubb/"
@@ -26,6 +28,3 @@ jobs:
        $permission = "rw-";
        $acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission $permission
        Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
-
-
-
