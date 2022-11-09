@@ -11,7 +11,10 @@ jobs:
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
 
-
+   - name: Install Module
+     shell: pwsh
+     run: |
+       Install-Module Az.Storage -Repository PSGallery -Force
 
    - name: Update Directory
      shell: pwsh
@@ -23,3 +26,6 @@ jobs:
        $permission = "rw-";
        $acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $userID -Permission $permission
        Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
+
+
+
