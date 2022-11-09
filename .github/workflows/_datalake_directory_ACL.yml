@@ -1,6 +1,6 @@
 name: 66 Data Lake Directory ACL
-#on: workflow_dispatch
-on: [push]
+on: workflow_dispatch
+#on: [push]
 
 jobs:
  build:
