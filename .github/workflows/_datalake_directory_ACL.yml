@@ -16,7 +16,7 @@ jobs:
      shell: pwsh
      run: |
        Install-Module Az.Storage -Repository PSGallery -Force
-       Connect-AzAccount
+       Connect-AzAccount -UseDeviceAuthentication
        Select-AzSubscription -SubscriptionId b14a1c2f-88c5-4229-be66-d9262651dd73
        $ctx = New-AzStorageContext -StorageAccountName '809rgdl' -UseConnectedAccount
        $filesystemName = "809rgdlfs"
