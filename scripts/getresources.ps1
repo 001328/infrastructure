@@ -1,0 +1,1 @@
+Get-AzResourceGroup -Name "809rg"

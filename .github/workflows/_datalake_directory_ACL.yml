@@ -17,5 +17,5 @@ jobs:
    - name: Update Directory
      uses: Azure/powershell@v1
      with:
-        inlineScript: Get-AzResourceGroup -Name "809rg"
+        inlineScript: ./scripts/getresources.ps1
         azPSVersion: "latest"
