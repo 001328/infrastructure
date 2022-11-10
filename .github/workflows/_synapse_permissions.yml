@@ -1,0 +1,22 @@
+name: 88 synapse permissions
+on: workflow_dispatch
+#on: [push]
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v2
+
+   - name: Login to Azure
+     uses: azure/login@v1
+     with:
+       creds: ${{ secrets.AZURELOGINCREDS }}
+       enable-AzPSSession: true
+
+
+   - name: Synapse Permissions
+     uses: Azure/powershell@v1
+     with:
+        inlineScript: ./scripts/Synapse_Permissions.ps1
+        azPSVersion: "latest"
