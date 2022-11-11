@@ -1,4 +1,4 @@
-name: 100 Synapse Role Assignment
+name: 99 Synapse Role Assignment (not needed?)
 on: workflow_dispatch
 jobs:
  build:
