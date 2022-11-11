@@ -39,6 +39,18 @@
                 "startIpAddress": "0.0.0.0",
                 "endIpAddress": "0.0.0.0"
             }
-        }
+        },
+        {
+            "type": "Microsoft.Synapse/workspaces/firewallRules",
+            "apiVersion": "2021-06-01",
+            "name": "[concat(resourceGroup().name,'syn', '/AllowHendrik')]",
+            "dependsOn": [
+                "[resourceId('Microsoft.Synapse/workspaces',concat(resourceGroup().name,'syn'))]"
+            ],
+            "properties": {
+                "startIpAddress": "96.27.171.139",
+                "endIpAddress": "96.27.171.139"
+            }
+        },
     ]
 }
