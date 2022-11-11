@@ -33,7 +33,7 @@
             "apiVersion": "2021-06-01",
             "name": "[concat(resourceGroup().name,'syn', '/AllowAllWindowsAzureIps')]",
             "dependsOn": [
-                "[resourceId(concat('Microsoft.Storage/storageAccounts',resourceGroup().name,'dl'))]"
+                "[resourceId('Microsoft.Synapse/workspaces',concat(resourceGroup().name,'syn'))]"
             ],
             "properties": {
                 "startIpAddress": "0.0.0.0",
