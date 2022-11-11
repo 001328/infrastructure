@@ -1,4 +1,4 @@
-name: 88 synapse permissions
+name: 3 Synapse Permissions
 on: workflow_dispatch
 #on: [push]
 
