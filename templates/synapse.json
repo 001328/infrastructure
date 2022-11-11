@@ -31,7 +31,7 @@
         {
             "type": "Microsoft.Synapse/workspaces/firewallRules",
             "apiVersion": "2021-06-01",
-            "name": "[concat(resourceGroup().name,'syn'), '/AllowAllWindowsAzureIps')]",
+            "name": "[concat(resourceGroup().name,'syn', '/AllowAllWindowsAzureIps')]",
             "dependsOn": [
                 "[resourceId('Microsoft.Storage/storageAccounts',concat(resourceGroup().name,'syn'))]"
             ],
