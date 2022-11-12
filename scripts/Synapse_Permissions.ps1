@@ -1,3 +1,4 @@
-$rolename = "Synapse Artifact Publisher";
-$signInName = "hendrik.kampert_kyndryl.com#EXT#@diginata.onmicrosoft.com";
+$rolename = "Synapse User";
+$signInName = "azuredataplatformgrp-owner";
 New-AzSynapseRoleAssignment -WorkspaceName 1113rgsyn -SignInName $signInName -RoleDefinitionName $rolename
+ 
