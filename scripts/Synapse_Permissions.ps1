@@ -1,4 +1,4 @@
-$entityID = "63542052-ac02-4705-903a-1250a1c35f89";
-$roleID = "6e4bf58a-b8e1-4cc3-bbf9-d73143322b78";
-New-AzSynapseRoleAssignment -WorkspaceName 1113rgsyn -RoleDefinitionId $roleID -ObjectId $entityID
+$entityID = "82f15ac5-8c5f-4e45-987f-fa1686da3a36";
+$roleID = "Synapse Administrator";
+New-AzSynapseRoleAssignment -WorkspaceName 1113rgsyn -RoleDefinitionName $roleID -ObjectId $entityID
   
