@@ -1,4 +1,4 @@
-$rolename = "Synapse User";
-$signInName = "hendrik.kampert@diginata.com";
-New-AzSynapseRoleAssignment -WorkspaceName 1113rgsyn -RoleDefinitionName $rolename -SignInName $signInName
- 
+$entityID = "82f15ac5-8c5f-4e45-987f-fa1686da3a36";
+$roleID = "Synapse Compute Operator";
+New-AzSynapseRoleAssignment -WorkspaceName 1113rgsyn -RoleDefinitionName $roleID -ObjectId $entityID
+  
