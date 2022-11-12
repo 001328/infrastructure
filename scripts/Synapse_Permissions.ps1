@@ -1,4 +1,4 @@
-$entityID = "82f15ac5-8c5f-4e45-987f-fa1686da3a36";
-$roleID = "Synapse Compute Operator";
-New-AzSynapseRoleAssignment -WorkspaceName 1113rgsyn -RoleDefinitionName $roleID -ObjectId $entityID
-  
+$workspace = "1113rgsyn";
+$role = "pache Spark Administrator";
+$entityId = "63542052-ac02-4705-903a-1250a1c35f89";
+az synapse role assignment create --workspace-name $workspace --role $role --assignee-object-id $entityId --assignee-principal-type User
