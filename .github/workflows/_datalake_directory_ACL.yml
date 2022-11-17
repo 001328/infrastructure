@@ -1,4 +1,4 @@
-name: 66 Data Lake Directory ACL
+name: 24 Data Lake Directory ACL
 on: workflow_dispatch
 #on: [push]
 
