@@ -15,6 +15,7 @@ jobs:
      uses: azure/arm-deploy@v1
      with:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
+       resourceGroupName: 'whatever'
        region: eastus2
        template: ./templates/resourcegroup.bicep
        parameters: 'resourceGroupName=bingo location=eastus2'
