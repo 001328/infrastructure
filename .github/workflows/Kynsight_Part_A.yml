@@ -34,3 +34,11 @@ jobs:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
        template: ./templates/datalakecontainer.json
+
+
+    - name: Create Role Assignment, Storage Blob Data Contributor
+     uses: azure/arm-deploy@v1
+     with:
+       subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
+       resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
+       template: ./templates/KD_A_datalakeroleassignment.json
