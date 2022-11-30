@@ -14,8 +14,8 @@ jobs:
    - name: Create Resource Group
      uses: azure/arm-deploy@v1
      with:
+       scope: subscription
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
-       resourceGroupName: 'whatever'
        region: eastus2
        template: ./templates/resourcegroup.bicep
        parameters: 'resourceGroupName=bingo location=eastus2'
