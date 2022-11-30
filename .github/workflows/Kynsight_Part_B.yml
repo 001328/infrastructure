@@ -20,3 +20,9 @@ jobs:
      with:
         inlineScript: ./scripts/DL_createDirectory.ps1
         azPSVersion: "latest"
+
+   - name: Update ACL for Directory
+     uses: Azure/powershell@v1
+     with:
+        inlineScript: ./scripts/DL_setACLpermissions.ps1
+        azPSVersion: "latest"
