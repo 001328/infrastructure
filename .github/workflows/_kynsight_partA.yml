@@ -34,10 +34,3 @@ jobs:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
        template: ./templates/datalakecontainer.json
-
-   - name: Create DL Role Assignment for Service Principal
-     uses: azure/arm-deploy@v1
-     with:
-       subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
-       resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
-       template: ./templates/datalakeroleassignment.json
