@@ -36,7 +36,7 @@ jobs:
        template: ./templates/datalakecontainer.json
 
 
-    - name: Create Role Assignment, Storage Blob Data Contributor
+   - name: Create Role Assignment, Storage Blob Data Contributor
      uses: azure/arm-deploy@v1
      with:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
