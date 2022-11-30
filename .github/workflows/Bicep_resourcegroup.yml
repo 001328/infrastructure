@@ -17,5 +17,3 @@ jobs:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        region: eastus2
        template: ./templates/resourcegroup.bicep
-       parameters:
-         ResourceGroupName=${{ secrets.RESOURCEGROUPNAME }}
