@@ -18,3 +18,5 @@ jobs:
        region: eastus2
        template: ./templates/resourcegroup.bicep
        ResourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
+       parameters:
+         name=${{ secrets.RESOURCEGROUPNAME }}
