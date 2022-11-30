@@ -1,4 +1,4 @@
-name: 22 DL Container Deployment
+name: 401 Resource Group Deployment
 on: workflow_dispatch
 jobs:
  build:
@@ -11,11 +11,12 @@ jobs:
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
 
-   - name: Create Data Lake Container
+   - name: Create Resource Group
      uses: azure/arm-deploy@v1
      with:
+       scope: subscription
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
-       resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
-       template: ./templates/datalakecontainer.json
-
-
+       region: eastus2
+       template: ./templates/resourcegroup.json
+       parameters:
+         ResourceGroupName=${{ secrets.RESOURCEGROUPNAME }}

@@ -1,4 +1,4 @@
-name: 3 Synapse Permissions
+name: 424 Data Lake Directory Create
 on: workflow_dispatch
 #on: [push]
 
@@ -15,8 +15,8 @@ jobs:
        enable-AzPSSession: true
 
 
-   - name: Synapse Permissions
+   - name: Create Directory
      uses: Azure/powershell@v1
      with:
-        inlineScript: ./scripts/Synapse_Permissions.ps1
+        inlineScript: ./scripts/DL_createDirectory.ps1
         azPSVersion: "latest"

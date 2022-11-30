@@ -1,4 +1,4 @@
-name: 21 Data Lake Deployment
+name: 421 Data Lake Deployment
 on: workflow_dispatch
 jobs:
  build:

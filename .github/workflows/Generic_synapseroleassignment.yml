@@ -1,4 +1,4 @@
-name: 23 DL Role Assignment
+name: 500 Synapse Role Assignment (not needed?)
 on: workflow_dispatch
 jobs:
  build:
@@ -16,4 +16,4 @@ jobs:
      with:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        resourceGroupName: ${{ secrets.RESOURCEGROUPNAME }}
-       template: ./templates/datalakeroleassignment.json
+       template: ./templates/synapseroleassignment.json

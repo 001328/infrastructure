@@ -1,4 +1,4 @@
-name: 55 DL Full
+name: 400 DL Full
 on: workflow_dispatch
 jobs:
  build:
