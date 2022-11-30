@@ -1,4 +1,4 @@
-name: 200 Part A - RG, DL, Container
+name: 200 KD Part A - RG, DL, Container
 on: workflow_dispatch
 jobs:
  build:
