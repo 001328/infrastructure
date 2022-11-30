@@ -2,16 +2,17 @@
     "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
     "contentVersion": "1.0.0.0",
     "variables": {
-        "RoleId_StorageBlobDataContributor": "ba92f5b4-2d11-453d-a403-e96b0029c9fe"
-        , "ObjectId_GroupOrUser": "30662d38-702b-4f82-90f8-885fbbaba1bd"
+        "RoleId_StorageBlobDataContributor": "ba92f5b4-2d11-453d-a403-e96b0029c9fe",
+        "RoleId_StorageBlobDataOwner": "b7e6dc6d-f1e8-4753-8033-0f276bb0955b",
+        "ObjectId_GroupOrUser": "30662d38-702b-4f82-90f8-885fbbaba1bd"
     },
     "resources": [
         {
             "type": "Microsoft.Authorization/roleAssignments",
             "apiVersion": "[providers('Microsoft.Authorization','roleAssignments').apiVersions[0]]",
-            "name": "[guid(concat(variables('ObjectId_GroupOrUser'),'-',variables('RoleId_StorageBlobDataContributor')))]",
+            "name": "[guid(concat(variables('ObjectId_GroupOrUser'),'-',variables('RoleId_StorageBlobDataOwner')))]",
             "properties": {
-                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('RoleId_StorageBlobDataContributor'))]",
+                "roleDefinitionId": "[resourceId('Microsoft.Authorization/roleDefinitions', variables('RoleId_StorageBlobDataOwner'))]",
                 "principalId": "[variables('ObjectId_GroupOrUser')]"
             }
         }
