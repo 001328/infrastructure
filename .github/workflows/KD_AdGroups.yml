@@ -18,5 +18,5 @@ jobs:
    - name: Create AD Group
      uses: Azure/powershell@v1
      with:
-        inlineScript: ./scripts/KD_createAdGroups.ps1
+        inlineScript: ./scripts/KD_createAdGroups.sh
         azPSVersion: "latest"
