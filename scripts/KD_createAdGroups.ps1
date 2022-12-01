@@ -1,5 +1,5 @@
 param(
     [Parameter()]
-    [string]$Parameter1
+    [string]$group
 )
-az ad group create --display-name $Parameter1 --mail-nickname $Parameter1
+az ad group create --display-name $group --mail-nickname $group
