@@ -15,7 +15,7 @@ jobs:
        enable-AzPSSession: true
 
 
-   - name: Create Directory
+   - name: Create AD Group
      uses: Azure/powershell@v1
      with:
         inlineScript: ./scripts/KD_createAdGroups.ps1
