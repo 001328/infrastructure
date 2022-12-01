@@ -1,4 +1,4 @@
-name: 500 KD Part A - AD Groups, Members
+name: 500 KD Part A - AD create AD Groups
 #on: workflow_dispatch
 on: [push]
 
