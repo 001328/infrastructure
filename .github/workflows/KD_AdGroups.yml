@@ -1,6 +1,6 @@
 name: 500 KD Part A - AD Groups, Members
-on: workflow_dispatch
-#on: [push]
+#on: workflow_dispatch
+on: [push]
 
 jobs:
  build:
