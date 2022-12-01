@@ -20,3 +20,4 @@ jobs:
      with:
         inlineScript: ./scripts/KD_createAdGroups.ps1
         azPSVersion: "latest"
+        parameters: ./parameters/kd_createGroup33.json
