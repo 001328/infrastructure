@@ -1,2 +1,5 @@
-$name;
-az ad group create --display-name $name --mail-nickname MailNick
+param(
+    [Parameter()]
+    [string]$Parameter1
+)
+az ad group create --display-name $Parameter1 --mail-nickname MailNick

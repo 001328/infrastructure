@@ -1,0 +1,1 @@
+./KD_createAdGroups.ps1 -Parameter1 'somevalue'
