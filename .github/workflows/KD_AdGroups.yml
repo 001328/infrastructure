@@ -1,0 +1,22 @@
+name: 500 KD Part A - AD Groups, Members
+on: workflow_dispatch
+#on: [push]
+
+jobs:
+ build:
+  runs-on: ubuntu-latest
+  steps:
+   - uses: actions/checkout@v3
+
+   - name: Login to Azure
+     uses: azure/login@v1
+     with:
+       creds: ${{ secrets.AZURELOGINCREDS }}
+       enable-AzPSSession: true
+
+
+   - name: Create Directory
+     uses: Azure/powershell@v1
+     with:
+        inlineScript: ./scripts/KD_createAdGroups.ps1
+        azPSVersion: "latest"

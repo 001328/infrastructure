@@ -18,4 +18,4 @@ jobs:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        region: eastus2
        template: ./templates/resourcegroup.bicep
-       parameters: ./params/test1328.json
+       parameters: ./parameters/infrastructure.json
