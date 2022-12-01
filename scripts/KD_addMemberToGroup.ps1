@@ -1,7 +1,7 @@
 param(
     [Parameter()]
-    [string]$user
-
+    [string]$user,
+    
     [Parameter()]
     [string]$group
 )
