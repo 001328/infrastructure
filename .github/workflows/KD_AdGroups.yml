@@ -20,5 +20,5 @@ jobs:
      with:
         inlineScript: ./scripts/KD_createAdGroups.ps1
         azPSVersion: "latest"
-       parameters:
+        parameters:
          name=${{ secrets.RESOURCEGROUPNAME }}
