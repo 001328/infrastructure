@@ -1,2 +1,5 @@
-$groupName = 'Producer33456';
-az ad group create --display-name $groupName --mail-nickname $groupName
+param(
+    [Parameter()]
+    [string]$Parameter1
+)
+az ad group create --display-name $Parameter1 --mail-nickname $Parameter1
