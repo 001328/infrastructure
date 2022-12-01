@@ -18,3 +18,4 @@ jobs:
        subscriptionId: ${{ secrets.SUBSCRIPTIONID }}
        region: eastus2
        template: ./templates/resourcegroup.bicep
+       parameters: 'resourceGroupName=bongo location=eastus2'
