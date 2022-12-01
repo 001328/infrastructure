@@ -1,8 +1,5 @@
 param(
-    [Parameter()]
     [string]$user,
-    
-    [Parameter()]
     [string]$group
 )
 $userId = az ad user show --id $user --query 'id';
