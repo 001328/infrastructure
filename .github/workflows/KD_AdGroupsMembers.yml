@@ -12,7 +12,6 @@ jobs:
      uses: azure/login@v1
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
-       enable-AzPSSession: true
 
 
    - name: Create AD Group - Producer
@@ -21,7 +20,7 @@ jobs:
        inlineScript: ./scripts/KD_createAdGroups.ps1 -group 'Producer001'
        azPSVersion: "latest"
 
-    - name: Add Member to AD Group - Producer
+   - name: Add Member to AD Group - Producer
      uses: Azure/powershell@v1
      with:
        inlineScript: ./scripts/KD_addMemberToGroup.ps1 -group 'Producer001' -user 'batman@diginata.com'
@@ -34,7 +33,7 @@ jobs:
        inlineScript: ./scripts/KD_createAdGroups.ps1 -group 'Consumer001'
        azPSVersion: "latest"
 
-    - name: Add Member to AD Group - Consumer
+   - name: Add Member to AD Group - Consumer
      uses: Azure/powershell@v1
      with:
        inlineScript: ./scripts/KD_addMemberToGroup.ps1 -group 'Consumer001' -user 'superman@diginata.com'
