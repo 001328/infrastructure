@@ -1,6 +1,6 @@
 name: 500 KD Part A - create AD Groups, add Member
-#on: workflow_dispatch
-on: [push]
+on: workflow_dispatch
+#on: [push]
 
 jobs:
  build:
