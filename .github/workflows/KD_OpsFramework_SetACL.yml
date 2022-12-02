@@ -1,4 +1,4 @@
-name: 500 KD - create Folder, Groups & set Permissions
+name: 500 KD - set ACL only
 #on: workflow_dispatch
 on: push
 
