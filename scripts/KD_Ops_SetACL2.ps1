@@ -1,4 +1,4 @@
-$groupId = az ad group show --group 'Producer001' --query 'id';
+$groupId = 'd6cc2eb7-50d8-4a3d-bb6b-77054f7a6096'
 $ctx = New-AzStorageContext -StorageAccountName '1117rgdl' -UseConnectedAccount
 $filesystemName = "1117rgdlfs"
 $dirname = "test001/"
