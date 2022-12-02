@@ -1,7 +1,5 @@
 name: 500 KD - create Folder, Groups & set Permissions
 on: workflow_dispatch
-#on: [push]
-
 jobs:
  build:
   runs-on: ubuntu-latest
