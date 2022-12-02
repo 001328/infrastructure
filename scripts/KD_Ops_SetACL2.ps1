@@ -1,2 +1,3 @@
 $group = 'Producer001'
-az ad group show --group $group --query 'id';
+$groupId = az ad group show --group $group --query 'id';
+$groupId
