@@ -1,4 +1,4 @@
-name: 500 KD - create Folder, Groups & set Permissions
+name: 22
 on: workflow_dispatch
 jobs:
  build:
