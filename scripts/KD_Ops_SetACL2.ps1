@@ -1,13 +1,11 @@
 param(
-    [string]$resource,
-    [string]$group,
-    [string]$permission
+    [string]$group
 )
 $groupId = az ad group show --group $group --query 'id';
-$ctx = New-AzStorageContext -StorageAccountName $resource -UseConnectedAccount
+$ctx = New-AzStorageContext -StorageAccountName '1117rgdl' -UseConnectedAccount
 $filesystemName = "1117rgdlfs"
 $dirname = "test001/"
 $entityID = $groupId;
-$permission1 = $permission;
-$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $entityID -Permission $permission1;
+$permission = "rw-";
+$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $entityID -Permission $permission
 Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
