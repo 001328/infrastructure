@@ -18,12 +18,12 @@ jobs:
    - name: Create AD Group
      uses: Azure/powershell@v1
      with:
-        inlineScript: ./scripts/KD_createAdGroups.ps1 -group 'test55'
+        inlineScript: ./scripts/KD_createAdGroups.ps1 -group 'test56'
         azPSVersion: "latest"
 
  
    - name: Add Member to AD Group
      uses: Azure/powershell@v1
      with:
-        inlineScript: ./scripts/KD_addMemberToGroup.ps1 -user 'batman@diginata.com' -group 'test55'
+        inlineScript: ./scripts/KD_addMemberToGroup.ps1 -user 'batman@diginata.com' -group 'test56'
         azPSVersion: "latest"
