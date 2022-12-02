@@ -12,6 +12,7 @@ jobs:
      uses: azure/login@v1.1
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
+       enable-AzPSSEssion: true
 
    - name: Update Directory ACL - Producer
      uses: Azure/powershell@v1
