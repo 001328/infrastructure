@@ -1,6 +1,6 @@
 name: 500 KD - set ACL only
-#on: workflow_dispatch
-on: push
+on: workflow_dispatch
+#on: push
 
 jobs:
  build:
