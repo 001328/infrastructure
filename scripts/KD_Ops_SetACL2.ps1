@@ -13,4 +13,4 @@ $acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType group -EntityId $group
 $acl
 #Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
 #$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType group -Permission $permission -EntityID=$entityId
-Update-AzDataLakeGen2Item -ACL $acl -Context $ctx -FileSystem $filesystemName -Path $dirname
+Update-AzDataLakeGen2Item -FileSystem $filesystemName -Path $dirname -Acl $acl -Context $ctx 
