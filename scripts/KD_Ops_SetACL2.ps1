@@ -8,7 +8,7 @@ $filesystemName = "1117rgdlfs"
 $dirname = "test001/"
 $permission = "rw-"
 $groupId
-$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType group -EntityId $groupId -Permission $permission
+$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType group -EntityId "ab578e32-d505-440b-861f-316492f06dcb" -Permission $permission
 #'acl'
 $acl
 #Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
