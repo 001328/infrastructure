@@ -10,7 +10,7 @@ $permission = "rw-"
 $groupId
 $acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType group -EntityId $groupId -Permission $permission
 #'acl'
-#$acl
+$acl
 #Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
 #$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType group -Permission $permission -EntityID=$entityId
 Update-AzDataLakeGen2Item -ACL $acl -Context $ctx -FileSystem $filesystemName -Path $dirname
