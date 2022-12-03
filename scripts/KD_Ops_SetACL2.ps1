@@ -6,9 +6,9 @@ $ctx = New-AzStorageContext -StorageAccountName '1117rgdl' -UseConnectedAccount
 $ctx
 $filesystemName = "1117rgdlfs"
 $dirname = "test1328/"
-$entityID = ("'" + $groupId + "'")
 $permission = "rw-"
-$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType group -EntityId $entityID -Permission $permission
+$groupId
+$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType group -EntityId 'ab578e32-d505-440b-861f-316492f06dcb' -Permission $permission
 #'acl'
 #$acl
 #Update-AzDataLakeGen2AclRecursive -Context $ctx -FileSystem $filesystemName -Path $dirname -Acl $acl
