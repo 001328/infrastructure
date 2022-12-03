@@ -1,6 +1,7 @@
 $group = 'Producer001'
 $groupId = az ad group show --group $group --query 'id'
 $groupId
+'whatever'
 $ctx = New-AzStorageContext -StorageAccountName '1117rgdl' -UseConnectedAccount
 $ctx
 $filesystemName = "1117rgdlfs"
