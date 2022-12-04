@@ -7,5 +7,5 @@ param(
 )
 $groupId = az ad group show --group $group --query "id"
 $ctx = New-AzStorageContext -StorageAccountName $resource -UseConnectedAccount
-$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $groupId.Replace("`"","") -Permission $permission -DefaultScope
+$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType user -EntityId $groupId.Replace("`"","") -Permission $permission
 Update-AzDataLakeGen2Item -FileSystem $container -Path $folder -Acl $acl -Context $ctx
