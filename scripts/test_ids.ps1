@@ -55,6 +55,34 @@ Connect-AzAccount
 Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
 
 
+you need to get the ACL first to put another entry into it
+
+$container = "1117rgdlfs"
+$folder = "test001/"
+$ctx = New-AzStorageContext -StorageAccountName '1117rgdl' -UseConnectedAccount
+$dir1 = Get-AzDataLakeGen2Item -FileSystem $container -Path $folder -Context $ctx
+
+
+$dir1
+$dir1.ACL
+
+$container = "1117rgdlfs"
+$folder = "test001/"
+$group = 'Consumer001'
+$groupId = az ad group show --group $group --query 'id'
+$permission = "rw-"
+$dir1 = Get-AzDataLakeGen2Item -FileSystem $container -Path $folder -Context $ctx
+$acl = $dir1.ACL
+$acl = Set-AzDataLakeGen2ItemAclObject -AccessControlType group -EntityId $groupId.Replace("`"","") -Permission $permission -InputObject $acl
+Update-AzDataLakeGen2Item -FileSystem $container -Path $folder -Acl $acl -Context $ctx
+
+$dir1 = Get-AzDataLakeGen2Item -FileSystem $container -Path $folder -Context $ctx
+$dir1.ACL
+
+
+
+
+
 $group = 'Consumer001'
 $groupId = az ad group show --group $group --query 'id'
 $groupId
