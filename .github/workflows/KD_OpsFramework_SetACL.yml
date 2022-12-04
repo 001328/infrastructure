@@ -14,16 +14,16 @@ jobs:
        creds: ${{ secrets.AZURELOGINCREDS }}
        enable-AzPSSession: true
 
-   - name: Update Directory ACL - Producer
-     uses: Azure/powershell@v1
-     with:
-       inlineScript: ./scripts/KD_Ops_SetACL2.ps1
-       azPSVersion: "latest"
-
    - name: Update Directory ACL - Consumer
      uses: Azure/powershell@v1
      with:
        inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test001' -group 'Consumer001' -permission 'rw-'
+       azPSVersion: "latest"
+
+   - name: Update Directory ACL - Producer
+     uses: Azure/powershell@v1
+     with:
+       inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test001' -group 'Producer001' -permission 'rwx'
        azPSVersion: "latest"
 
    - name: Update Container Permission
