@@ -3,7 +3,7 @@ name: 500 KD - create Folder, Groups & set Permissions
 on: push
 
 env:
- PRODUCER: 'Producer005'
+ PRODUCER: Producer005
 
 jobs:
  build:
@@ -20,7 +20,7 @@ jobs:
    - name: Create AD Group - Producer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_createGroup.ps1 -group $PRODUCER
+       inlineScript: ./scripts/KD_Ops_createGroup.ps1 -group '$PRODUCER'
        azPSVersion: "latest"
 
    - name: Add Member to AD Group - Producer
