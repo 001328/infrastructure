@@ -17,17 +17,17 @@ jobs:
    - name: Update Directory ACL - Consumer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test001' -group 'Consumer001' -permission 'rw-'
+       inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test002' -group 'Consumer002' -permission 'rw-'
        azPSVersion: "latest"
 
    - name: Update Directory ACL - Producer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test001' -group 'Producer001' -permission 'rwx'
+       inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test002' -group 'Producer002' -permission 'rwx'
        azPSVersion: "latest"
 
    - name: Update Container Permission
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_SetContainerPermission.ps1 -resource '1117rgdl' -container '1117rgdlfs' -group 'Consumer001' -role 'Storage Blob Data Contributor' -resourcegroup ${{ secrets.RESOURCEGROUPNAME }} -subscription ${{ secrets.SUBSCRIPTIONID }}
+       inlineScript: ./scripts/KD_Ops_SetContainerPermission.ps1 -resource '1117rgdl' -container '1117rgdlfs' -group 'Consumer002' -role 'Storage Blob Data Contributor' -resourcegroup ${{ secrets.RESOURCEGROUPNAME }} -subscription ${{ secrets.SUBSCRIPTIONID }}
        azPSVersion: "latest"
