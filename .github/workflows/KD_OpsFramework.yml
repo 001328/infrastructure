@@ -3,7 +3,7 @@ name: 500 KD - create Folder, Groups & set Permissions
 on: push
 
 env:
- PRODUCER: Producer005
+ PRODUCER: 'Producer005'
 
 jobs:
  build:
