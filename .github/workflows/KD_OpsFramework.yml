@@ -9,54 +9,60 @@ jobs:
    - uses: actions/checkout@v3
 
    - name: Login to Azure
-     uses: azure/login@v1.1
+     uses: azure/login@v1
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
 
    - name: Create AD Group - Producer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_createGroup.ps1 -group 'Producer001'
+       inlineScript: ./scripts/KD_Ops_createGroup.ps1 -group 'Producer002'
        azPSVersion: "latest"
 
    - name: Add Member to AD Group - Producer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_addUserToGroup.ps1 -group 'Producer001' -user 'batman@diginata.com'
+       inlineScript: ./scripts/KD_Ops_addUserToGroup.ps1 -group 'Producer002' -user 'batman@diginata.com'
        azPSVersion: "latest"
 
    - name: Create AD Group - Consumer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_createGroup.ps1 -group 'Consumer001'
+       inlineScript: ./scripts/KD_Ops_createGroup.ps1 -group 'Consumer002'
        azPSVersion: "latest"
 
    - name: Add Member to AD Group - Consumer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_addUserToGroup.ps1 -group 'Consumer001' -user 'superman@diginata.com'
+       inlineScript: ./scripts/KD_Ops_addUserToGroup.ps1 -group 'Consumer002' -user 'superman@diginata.com'
        azPSVersion: "latest"
 
    - name: Create Directory (Folder)
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_createDirectory.ps1 -folder 'test001' -container '1117rgdlfs' -resource '1117rgdl'
-       azPSVersion: "latest"
-
-   - name: Update Directory ACL - Producer
-     uses: Azure/powershell@v1
-     with:
-       inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test001' -group 'Producer001' -permission 'rwx'
+       inlineScript: ./scripts/KD_Ops_createDirectory.ps1 -folder 'test002' -container '1117rgdlfs' -resource '1117rgdl'
        azPSVersion: "latest"
 
    - name: Update Directory ACL - Consumer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test001' -group 'Consumer001' -permission 'rw-'
+       inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test002' -group 'Consumer002' -permission 'rw-'
        azPSVersion: "latest"
 
-   - name: Update Container Permission
+   - name: Update Directory ACL - Producer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_SetContainerPermission.ps1 -group 'Consumer001' -role 'Storage Blob Data Contributor'
+       inlineScript: ./scripts/KD_Ops_SetACL.ps1 -resource '1117rgdl' -container '1117rgdlfs' -folder 'test002' -group 'Producer002' -permission 'rwx'
+       azPSVersion: "latest"
+
+   - name: Update Container Permission - Consumer
+     uses: Azure/powershell@v1
+     with:
+       inlineScript: ./scripts/KD_Ops_SetContainerPermission.ps1 -resource '1117rgdl' -container '1117rgdlfs' -group 'Consumer002' -role 'Storage Blob Data Contributor' -resourcegroup ${{ secrets.RESOURCEGROUPNAME }} -subscription ${{ secrets.SUBSCRIPTIONID }}
+       azPSVersion: "latest"
+
+   - name: Update Container Permission - Producer
+     uses: Azure/powershell@v1
+     with:
+       inlineScript: ./scripts/KD_Ops_SetContainerPermission.ps1 -resource '1117rgdl' -container '1117rgdlfs' -group 'Producer002' -role 'Storage Blob Data Contributor' -resourcegroup ${{ secrets.RESOURCEGROUPNAME }} -subscription ${{ secrets.SUBSCRIPTIONID }}
        azPSVersion: "latest"
