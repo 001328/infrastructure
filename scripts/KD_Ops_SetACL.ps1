@@ -6,6 +6,7 @@ param(
     [string]$folder 
 )
 $groupId = az ad group show --group $group --query "id"
+Connect-AzAccount
 $ctx = New-AzStorageContext -StorageAccountName $resource -UseConnectedAccount
 $dir1 = Get-AzDataLakeGen2Item -FileSystem $container -Path $folder -Context $ctx
 $acl = $dir1.ACL
