@@ -1,6 +1,6 @@
 name: 500 KD - create Folder, Groups & set Permissions
-on: workflow_dispatch
-#on: push
+#on: workflow_dispatch
+on: push
 
 env:
  PRODUCER: Producer005
