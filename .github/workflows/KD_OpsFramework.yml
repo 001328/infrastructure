@@ -12,6 +12,7 @@ jobs:
      uses: azure/login@v1
      with:
        creds: ${{ secrets.AZURELOGINCREDS }}
+       enable-AzPSSession: true
 
    - name: Create AD Group - Producer
      uses: Azure/powershell@v1
