@@ -2,6 +2,9 @@ name: 500 KD - create Folder, Groups & set Permissions
 on: workflow_dispatch
 #on: push
 
+params:
+  Producer: {{'Producer005'}}
+
 jobs:
  build:
   runs-on: ubuntu-latest
@@ -17,7 +20,7 @@ jobs:
    - name: Create AD Group - Producer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_createGroup.ps1 -group 'Producer004'
+       inlineScript: ./scripts/KD_Ops_createGroup.ps1 -group {{Producer}}
        azPSVersion: "latest"
 
    - name: Add Member to AD Group - Producer
