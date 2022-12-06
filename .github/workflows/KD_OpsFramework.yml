@@ -3,9 +3,9 @@ name: 500 KD - create Folder, Groups & set Permissions
 on: push
 
 env:
- PRODUCER: Producer008
- CONSUMER: Consumer008
- FOLDER: test008
+ PRODUCER: Producer009
+ CONSUMER: Consumer009
+ FOLDER: test009
  CONTAINER: 1117rgdlfs
  RESOURCE: 1117rgdl
  PERMISSION_FOLDER_PRODUCER: rw-
@@ -13,6 +13,8 @@ env:
  PERMISSION_CONTAINER: Storage Blob Data Contributor
  USERLIST_PRODUCER: batman@diginata.com, ironman@diginata.com
  USERLIST_CONSUMER: batman@diginata.com
+ RESOURCEGROUP: ${{ secrets.RESOURCEGROUPNAME }}
+ SUBSCRIPTIONID: ${{ secrets.SUBSCRIPTIONID }}
 
 jobs:
  build:
@@ -71,11 +73,11 @@ jobs:
    - name: Update Container Permission - Consumer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_SetContainerPermission.ps1 -resource ${{ env.RESOURCE }} -container ${{ env.CONTAINER }} -group ${{ env.CONSUMER }} -role ${{ env.PERMISSION_CONTAINER }} -resourcegroup ${{ secrets.RESOURCEGROUPNAME }} -subscription ${{ secrets.SUBSCRIPTIONID }}
+       inlineScript: ./scripts/KD_Ops_SetContainerPermission.ps1 -resource ${{ env.RESOURCE }} -container ${{ env.CONTAINER }} -group ${{ env.CONSUMER }} -role ${{ env.PERMISSION_CONTAINER }} -resourcegroup ${{ env.RESOURCEGROUP }} -subscription ${{ env.SUBSCRIPTIONID }}
        azPSVersion: "latest"
 
    - name: Update Container Permission - Producer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_SetContainerPermission.ps1 -resource ${{ env.RESOURCE }} -container ${{ env.CONTAINER }} -group ${{ env.PRODUCER }} -role 'Storage Blob Data Contributor' -resourcegroup ${{ secrets.RESOURCEGROUPNAME }} -subscription ${{ secrets.SUBSCRIPTIONID }}
+       inlineScript: ./scripts/KD_Ops_SetContainerPermission.ps1 -resource ${{ env.RESOURCE }} -container ${{ env.CONTAINER }} -group ${{ env.PRODUCER }} -role ${{ env.PERMISSION_CONTAINER }} -resourcegroup ${{ env.RESOURCEGROUP }} -subscription ${{ env.SUBSCRIPTIONID }}
        azPSVersion: "latest"
