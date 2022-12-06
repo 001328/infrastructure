@@ -10,7 +10,7 @@ env:
  RESOURCE: 1117rgdl
  PERMISSION_FOLDER_PRODUCER: rw-
  PERMISSION_FOLDER_CONSUMER: rwx
- PERMISSION_CONTAINER: Storage Blob Data Contributor
+ PERMISSION_CONTAINER: 'Storage Blob Data Contributor'
  USERLIST_PRODUCER: batman@diginata.com, ironman@diginata.com
  USERLIST_CONSUMER: batman@diginata.com
  RESOURCEGROUP: ${{ secrets.RESOURCEGROUPNAME }}
