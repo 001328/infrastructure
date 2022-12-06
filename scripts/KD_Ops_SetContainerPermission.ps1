@@ -8,4 +8,4 @@ param(
 )
 $role
 $groupId = az ad group show --group $group --query 'id';
-az role assignment create --role $role --assignee $groupId.Replace("`"","") --scope ('/subscriptions/' + $subscription + '/resourceGroups/' + $resourcegroup + '/providers/Microsoft.Storage/storageAccounts/' + $resource + '/blobServices/default/containers/' + $container)
+az role assignment create --role $role.Replace("-"," ") --assignee $groupId.Replace("`"","") --scope ('/subscriptions/' + $subscription + '/resourceGroups/' + $resourcegroup + '/providers/Microsoft.Storage/storageAccounts/' + $resource + '/blobServices/default/containers/' + $container)
