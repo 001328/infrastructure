@@ -153,6 +153,36 @@ Update-AzDataLakeGen2Item -FileSystem $filesystemName -Path $dirname -Acl $acl -
 
 
 
+---------------------------
+
+$a = 'batman@diginata.com'
+'ironman@diginata.com'
+$userlist = $a, $b
+$userlist
+$userlist[1]
+foreach ($user in $userlist)
+{
+$userId = az ad user show --id $user --query 'id';
+$userId
+}
+
+
+
+$userlist = 'batman@diginata.com', 'ironman@diginata.com'
+$userlist
+$userlist[1]
+foreach ($user in $userlist)
+{
+$userId = az ad user show --id $user --query 'id';
+$userId
+}
+
+$users = 'batman@diginata.com','ironman@diginata.com'
+$userId = az ad user show --id $users --query 'id';
+$userId
+az ad group member add --group $group --member-id $userId
+
+
 
 
 
