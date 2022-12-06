@@ -3,9 +3,9 @@ name: 500 KD - create Folder, Groups & set Permissions
 on: push
 
 env:
- PRODUCER: Producer009
- CONSUMER: Consumer009
- FOLDER: test009
+ PRODUCER: Producer010
+ CONSUMER: Consumer010
+ FOLDER: test010
  CONTAINER: 1117rgdlfs
  RESOURCE: 1117rgdl
  PERMISSION_FOLDER_PRODUCER: rw-
