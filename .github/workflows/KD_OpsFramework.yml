@@ -1,19 +1,19 @@
-name: 500 KD - create Folder, Groups & set Permissions
-#on: workflow_dispatch
-on: push
+name: Ops Framework - Folder Permissions
+on: workflow_dispatch
+#on: push
 
 env:
  PRODUCER: Producer010
+ USERLIST_PRODUCER: batman@diginata.com, ironman@diginata.com
+ PERMISSION_FOLDER_PRODUCER: rwx
  CONSUMER: Consumer010
+ USERLIST_CONSUMER: batman@diginata.com
+ PERMISSION_FOLDER_CONSUMER: rw-
+ PERMISSION_CONTAINER: Storage-Blob-Data-Contributor
  FOLDER: test010
  CONTAINER: 1117rgdlfs
  RESOURCE: 1117rgdl
- PERMISSION_FOLDER_PRODUCER: rw-
- PERMISSION_FOLDER_CONSUMER: rwx
- PERMISSION_CONTAINER: Storage-Blob-Data-Contributor
- USERLIST_PRODUCER: batman@diginata.com, ironman@diginata.com
- USERLIST_CONSUMER: batman@diginata.com
- RESOURCEGROUP: ${{ secrets.RESOURCEGROUPNAME }}
+ RESOURCEGROUP: 1117rg
  SUBSCRIPTIONID: ${{ secrets.SUBSCRIPTIONID }}
 
 jobs:
