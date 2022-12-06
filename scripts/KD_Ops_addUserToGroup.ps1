@@ -1,5 +1,5 @@
 param(
-    [[string]]$userlist,
+    [string[]]$userlist,
     [string]$group
 )
 foreach ($user in $userlist)
