@@ -3,14 +3,16 @@ name: 500 KD - create Folder, Groups & set Permissions
 on: push
 
 env:
- PRODUCER: Producer007
- CONSUMER: Consumer007
- FOLDER: test007
+ PRODUCER: Producer008
+ CONSUMER: Consumer008
+ FOLDER: test008
  CONTAINER: 1117rgdlfs
  RESOURCE: 1117rgdl
  PERMISSION_FOLDER_PRODUCER: rw-
  PERMISSION_FOLDER_CONSUMER: rwx
  PERMISSION_CONTAINER: Storage Blob Data Contributor
+ USERLIST_PRODUCER: batman@diginata.com, ironman@diginata.com
+ USERLIST_CONSUMER: batman@diginata.com
 
 jobs:
  build:
@@ -33,7 +35,7 @@ jobs:
    - name: Add Member to AD Group - Producer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_addUserToGroup.ps1 -group ${{ env.PRODUCER }} -user 'batman@diginata.com'
+       inlineScript: ./scripts/KD_Ops_addUserToGroup.ps1 -group ${{ env.PRODUCER }} -userlist ${{ env.USERLIST_PRODUCER }}
        azPSVersion: "latest"
 
    - name: Create AD Group - Consumer
@@ -45,7 +47,7 @@ jobs:
    - name: Add Member to AD Group - Consumer
      uses: Azure/powershell@v1
      with:
-       inlineScript: ./scripts/KD_Ops_addUserToGroup.ps1 -group ${{ env.CONSUMER }} -user 'superman@diginata.com'
+       inlineScript: ./scripts/KD_Ops_addUserToGroup.ps1 -group ${{ env.CONSUMER }} -userlist ${{ env.USERLIST_CONSUMER }}
        azPSVersion: "latest"
 
    - name: Create Directory (Folder)
